@@ -1,42 +1,53 @@
-<h1>Eat Da Burger</h1>
-<br>
+<div class="container position-center">
+  <h1>Eat Da Burger</h1>
+  <br><br>
+  <div class="row">
+    <div class="col6">
+      <img src="https://media1.giphy.com/media/l3V0ADaHw4aAbfwOI/giphy.gif">
+    </div>
+    <div id='add'>
+  <h2>Add a Burger: </h2>
 
-<div id='avail'>
+  <form class="create-update-form" action="/" method="POST">
+    <div class="form-group">
+      <label for="dab">Burger Name:</label>
+      <input type="text" id="dab" name="burger_name">
+    </div>
+    <button class="btn btn-primary" type="submit">Add Burger</button>
+  </form>
+</div>
+  </div>
+  <br><br>
+
+</div>
+<div class="container">
+  <div id='avail'>
     <h2>Burgers to Eat:</h2>
     <ul>
-        {{#each burgers}} {{#unless this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
+      {{#each burgers}} {{#unless this.devoured}}
+      <li>
+        {{this.id}}. {{this.burger_name}}
 
-            <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="false">
-                <button class="btn btn-warning" type="submit">Devour It!</button>
-            </form>
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="false">
+          <button class="btn btn-warning" type="submit">Devour It!</button>
+        </form>
 
-        </li>
-        {{/unless}} {{/each}}
+      </li>
+      {{/unless}} {{/each}}
     </ul>
+  </div>
 </div>
+
 <div id='devoured'>
-    <h2>Burgers Devoured: </h2>
+  <h2>Burgers Devoured: </h2>
 
-    <ul>
-        {{#each burgers}} {{#if this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
-        </li>
-        {{/if}} {{/each}}
-    </ul>
+  <ul>
+    {{#each burgers}} {{#if this.devoured}}
+    <li>
+      {{this.id}}. {{this.burger_name}}
+    </li>
+    {{/if}} {{/each}}
+  </ul>
 </div>
 
-<div id='add'>
-    <h2>Add a Burger: </h2>
-
-    <form class="create-update-form" action="/" method="POST">
-        <div class="form-group">
-            <label for="dab">Burger Name:</label>
-            <input type="text" id="dab" name="burger_name">
-        </div>
-        <button class="btn btn-primary" type="submit">Add Burger</button>
-    </form>
-</div>

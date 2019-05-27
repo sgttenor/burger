@@ -1,7 +1,7 @@
 body {
   font-family: 'Germania One', cursive;
   width: 100%;
-  background-image: url('../img/Burger%20background.jpg');
+  background-image: url('');
 }
 
 h1 {
@@ -9,18 +9,24 @@ h1 {
   margin-left: 20%;
   margin-bottom: 3%;
   margin-top: 2%;
+  text-align: center;
 }
 
 #avail {
   float: left;
   margin-right: 6%;
   margin-left: 10%;
+}
 
-
+img {
+  height: 200px;
+  width: 200px;
 }
 
 #devoured {
-  float: left;
+  float: right;
+  margin-right: 20%;
+  margin-left: 6%;
 
 }
 
