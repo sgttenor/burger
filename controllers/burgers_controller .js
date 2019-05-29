@@ -1,16 +1,16 @@
 var express = require('express');
 
 var router = express.Router();
-
+//requiring specific path to models folder
 var burger = require("../models/burger.js");
+
 
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
         var hbsObject = {
             burgers: data
         };
-        console.log("This is what I get" + hbsObject);//I get object and nothing else but 
-        //burgers are getting into to database and on the screen
+        console.log("This is what I get" + hbsObject);
         res.render("index", hbsObject);
     });
 });
